@@ -10,6 +10,7 @@ class traefik::install {
     ensure  => present,
     source  => $traefik_url,
     creates => $traefik_install,
+    cleanup => false,
   }
 
   exec { "chmod ${traefik_install}":
