@@ -1,6 +1,6 @@
 
 class traefik (
-  $ensure             = 'present'
+  $ensure             = 'present',
   $version            = $traefik::params::version,
   $package_name       = $traefik::params::package_name,
   $download_url_base  = $traefik::params::download_url_base,
