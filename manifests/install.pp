@@ -1,5 +1,5 @@
 
-class traefik::install(
+class traefik::install {
   $version          = $traefik::version
   $traefik_url      = "${traefik::download_url_base}/v${traefik::version}/traefik_linux-amd64"
   $traefik_install  = "${traefik::install_path}/${traefik::package_name}"
@@ -14,7 +14,7 @@ class traefik::install(
 
   exec { "chmod ${traefik_install}":
     command   => "chmod 755 ${traefik_install}",
-    path      => ['/sbin','/bin','/usr/sbin','/usr/bin','/usr/local/sbin','/usr/local/bin']
+    path      => ['/sbin','/bin','/usr/sbin','/usr/bin','/usr/local/sbin','/usr/local/bin'],
     subscribe => Archive[$traefik_install],
   }
 
