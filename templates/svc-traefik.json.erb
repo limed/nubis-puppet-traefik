@@ -1,0 +1,16 @@
+{
+  "service": {
+    "name": "<%= @project_name %>-traefik",
+    "port": <%= @traefik_port %>,
+    "tags": [
+      "%%ENVIRONMENT%%",
+	  "%%ARENA%%",
+      "metrics"
+    ],
+    "check": {
+       "http": "http://localhost:<%= @traefik_port %>/ping",
+       "interval": "10s",
+       "timeout": "1s"
+    }
+  }
+}
