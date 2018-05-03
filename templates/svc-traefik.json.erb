@@ -1,11 +1,11 @@
 {
   "service": {
     "name": "<%= @project_name %>-traefik",
-    "port": <%= @traefik_port %>,
+    "port": "<%= @traefik_port %>",
     "tags": [
-      "%%ENVIRONMENT%%",
-	  "%%ARENA%%",
-      "metrics"
+        "%%ENVIRONMENT%%",
+        "%%ARENA%%",
+        "metrics"
     ],
     "check": {
        "http": "http://localhost:<%= @traefik_port %>/ping",
